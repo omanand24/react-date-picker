@@ -1,24 +1,21 @@
-import logo from './logo.svg';
+
 import './App.css';
+import CalendarPreview from './context/CalendarPreview';
+import DatePicker from './context/DatePicker';
+import { DatePickerProvider } from './context/DatePickerContext';
+import Header from './context/Header';
+import RecurrenceOptions from './context/RecurrenceOptions';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <DatePickerProvider>
+      <div>
+        <Header />
+        <RecurrenceOptions />
+        <DatePicker />
+        <CalendarPreview />
+      </div>
+    </DatePickerProvider>
   );
 }
 
